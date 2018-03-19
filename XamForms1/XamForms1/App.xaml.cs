@@ -1,7 +1,9 @@
 ﻿using FreshMvvm;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using XamForms1.PageModels;
 
+[assembly : XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XamForms1
 {
     public partial class App : Application
