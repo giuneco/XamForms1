@@ -1,8 +1,45 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamForms1.Pages.MoviesPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamForms1.Pages.MoviesPage" Title="Giuneco Movies">
    
     <StackLayout>
-        <SearchBar Placeholder="Search Here.." SearchCommand="{Binding SearchMovies}" Text="{Binding SearchText}"/>
+        <SearchBar Placeholder="Search Here.." SearchCommand="{Binding SearchMovies}" Text="{Binding SearchText}" BackgroundColor="Red"/>
+        
+        <!--MAIN LISTVIEW-->
+        <ListView HasUnevenRows="true" ItemsSource="{Binding Movies}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="150">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image  Aspect="AspectFit" Source="{Binding ArtworkUri}"/>
+                            
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="{Binding Title}"/>
+                                <Label Grid.Row="1" Text="{Binding Description}"/>
+                                
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        
+					
+        </ListView>
+        <!--MAIN LISTVIEW-->
+        
     </StackLayout>
+    
+   
     
 </ContentPage>
