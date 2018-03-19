@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using FreshMvvm;
+using Xamarin.Forms;
+using XamForms1.PageModels;
 
 namespace XamForms1
 {
@@ -8,7 +10,14 @@ namespace XamForms1
         {
             InitializeComponent();
 
-            MainPage = new XamForms1Page();
+            
+            var tabbedNavigation = new FreshTabbedNavigationContainer ();
+            tabbedNavigation.AddTab<MoviesPageModel> ("Movies", null);
+            tabbedNavigation.AddTab<AboutPageModel> ("About", null);
+            
+            MainPage = tabbedNavigation;
+            
+            //MainPage = new XamForms1Page();
         }
 
         protected override void OnStart()
