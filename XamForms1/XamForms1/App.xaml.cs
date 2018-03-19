@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamForms1.PageModels;
+using XamForms1.Services;
+using XamForms1.Services.Impl;
 
 [assembly : XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XamForms1
@@ -11,6 +13,9 @@ namespace XamForms1
         public App()
         {
             InitializeComponent();
+
+
+            FreshIOC.Container.Register<IMovieService, MovieService>();
 
             
             var tabbedNavigation = new FreshTabbedNavigationContainer ();
