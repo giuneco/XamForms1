@@ -18,6 +18,7 @@ namespace XamForms1.iOS
             global::Xamarin.Forms.Forms.Init();
 
             FreshIOC.Container.Register<IBlocker, IosBlocker>().AsSingleton();
+            FreshIOC.Container.Register<ITextToSpeech, TextToSpeechImplementation>().AsMultiInstance();
 
 
             LoadApplication(new App());

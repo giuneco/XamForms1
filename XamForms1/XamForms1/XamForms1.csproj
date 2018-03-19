@@ -43,6 +43,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Behaviour\BehaviorBase.cs" />
+    <Compile Include="Behaviour\EventToCommandBehavior.cs" />
+    <Compile Include="Converters\SelectedItemEventArgsToSelectedItemConverter.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="PageModels\AboutPageModel.cs" />
@@ -51,6 +54,7 @@
     <Compile Include="Services\IBlocker.cs" />
     <Compile Include="Services\IMoviesService.cs" />
     <Compile Include="Services\Impl\MovieService.cs" />
+    <Compile Include="Services\ITextToSpeech.cs" />
     <Compile Include="XamForms1Page.xaml.cs">
       <DependentUpon>XamForms1Page.xaml</DependentUpon>
     </Compile>

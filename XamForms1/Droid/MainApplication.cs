@@ -26,6 +26,7 @@ namespace XamForms1.Droid
             //A great place to initialize Xamarin.Insights and Dependency Services!
             
             FreshIOC.Container.Register<IBlocker, DroidBlocker>().AsSingleton();
+            FreshIOC.Container.Register<ITextToSpeech, TextToSpeechImplementation>().AsMultiInstance();
             
 
         }
