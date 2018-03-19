@@ -46,7 +46,9 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="PageModels\AboutPageModel.cs" />
+    <Compile Include="PageModels\BlockableBaseModel.cs" />
     <Compile Include="PageModels\MoviesPageModel.cs" />
+    <Compile Include="Services\IBlocker.cs" />
     <Compile Include="Services\IMoviesService.cs" />
     <Compile Include="Services\Impl\MovieService.cs" />
     <Compile Include="XamForms1Page.xaml.cs">

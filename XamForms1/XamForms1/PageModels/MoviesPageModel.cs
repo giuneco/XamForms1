@@ -1,18 +1,32 @@
-﻿using System.Windows.Input;
-using FreshMvvm;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
+using XamForms1.Services;
 
 namespace XamForms1.PageModels
 {
-    public class MoviesPageModel : FreshBasePageModel
+    public class MoviesPageModel : BlockableBaseModel
     {
-        public MoviesPageModel()
+        private readonly IMovieService _movieService;
+
+        public MoviesPageModel(IBlocker blocker , IMovieService movieService) : base(blocker)
         {
-            this.OnIncrement = new Command(() => { this.Test++; });
+            _movieService = movieService;
+            
+            this.SearchMovies = new Command(async () => { await this.InnerSearchMovies(); }, () => !this.IsBusy);
         }
 
-        public ICommand OnIncrement { get; private set; }
+        private async Task InnerSearchMovies()
+        {
+            this.IsBusy = true;
+            var movies = await this._movieService.GetMoviesForSearchAsync(this.SearchText);
+            this.IsBusy = false;
+        }
 
-        public int Test { get; set; }
+        public ICommand SearchMovies { get; private set; }
+
+        public string SearchText { get; set; }
+        
+
     }
 }

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using FreshMvvm;
 using UIKit;
+using XamForms1.iOS.Services;
+using XamForms1.Services;
 
 namespace XamForms1.iOS
 {
@@ -13,6 +16,9 @@ namespace XamForms1.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            FreshIOC.Container.Register<IBlocker, IosBlocker>().AsSingleton();
+
 
             LoadApplication(new App());
 
