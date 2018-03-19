@@ -12,7 +12,7 @@ namespace XamForms1.iOS.Services
             var speechSynthesizer = new AVSpeechSynthesizer();
             var speechUtterance = new AVSpeechUtterance(text)
             {
-                Rate = AVSpeechUtterance.MaximumSpeechRate / 4,
+                Rate = AVSpeechUtterance.MaximumSpeechRate / 2,
                 Voice = AVSpeechSynthesisVoice.FromLanguage("en-US"),
                 Volume = 0.5f,
                 PitchMultiplier = 1.0f

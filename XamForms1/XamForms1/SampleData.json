@@ -1,0 +1,19 @@
+﻿"MoviesPage.xaml" : {
+    "Pippo": "Gino",
+    "Movies": [
+        {
+            "ArtworkUri": "http://1.bp.blogspot.com/-9D4cK77-g88/TWfeiQj2YuI/AAAAAAAADmA/dsPQtuzl6nA/s1600/Lost-Artwork-Inglourious-Basterds-1.jpeg",
+            "Title": "Inglourious Bastards",
+            "Description": "In 1941, SS colonel Hans Landa interrogates French dairy farmer Perrier La Padite as to the whereabouts of the last unaccounted-for Jewish family in the area. In exchange for the Germans agreeing to leave his family alone for the rest of the war, La Padite reveals that the Dreyfus family is hidden under the floor. Landa orders SS soldiers to shoot through the floorboards. The family is killed except for Shosanna, a young woman who escapes."
+        },
+        {
+            "ArtworkUri": "http://www.revelationz.net/images/movies/mc/IndianaJonesAndTheLastCru34044_f.jpg",
+            "Title": "Indiana Jones and the last crusade",
+            "Description": "In 1941, SS colonel Hans Landa interrogates French dairy farmer Perrier La Padite as to the whereabouts of the last unaccounted-for Jewish family in the area. In exchange for the Germans agreeing to leave his family alone for the rest of the war, La Padite reveals that the Dreyfus family is hidden under the floor. Landa orders SS soldiers to shoot through the floorboards. The family is killed except for Shosanna, a young woman who escapes."
+        }
+    ]
+
+},
+"AboutPage.xaml":{
+    "Test" :  "Bello"
+}

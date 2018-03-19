@@ -5,6 +5,17 @@
         
         <ResourceDictionary>
             <Color x:Key="Primary">#cc3333</Color>
+            <Color x:Key="DarkPrimary">#a32828</Color>
+            <Color x:Key="DarkBackGround">#333333</Color>
+            
+            
+            
+            
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
         </ResourceDictionary>
         
     </Application.Resources>

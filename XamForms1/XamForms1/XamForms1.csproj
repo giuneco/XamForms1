@@ -94,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="SampleData.json" />
+    <None Include="Gorilla.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml">

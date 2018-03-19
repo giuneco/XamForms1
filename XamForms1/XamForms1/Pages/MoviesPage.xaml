@@ -12,11 +12,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <StackLayout>
-        <SearchBar Placeholder="Search Here.." SearchCommand="{Binding SearchMovies}" Text="{Binding SearchText}"  BackgroundColor="Red"/>
+    <StackLayout Spacing="0">
+        <SearchBar Placeholder="Search Here.." SearchCommand="{Binding SearchMovies}" Text="{Binding SearchText}"  BackgroundColor="{StaticResource Primary}" >
+            <SearchBar.PlaceholderColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="White"/>
+            </SearchBar.PlaceholderColor>>
+        </SearchBar>
         
         <!--MAIN LISTVIEW-->
-        <ListView HasUnevenRows="true" ItemsSource="{Binding Movies}" >
+        <ListView HasUnevenRows="true" ItemsSource="{Binding Movies}" BackgroundColor="{StaticResource Primary}" SeparatorVisibility="None">
             
             <ListView.Behaviors>
                 <behaviour:EventToCommandBehavior EventName="ItemSelected" Command="{Binding SayMovieTitle}" Converter="{StaticResource SelectedItemConverter}" />
@@ -25,7 +29,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="150">
-                        <Grid>
+                        <Grid Margin="5" BackgroundColor="{StaticResource DarkPrimary}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition/>
@@ -40,7 +44,7 @@
                                 </Grid.RowDefinitions>
                                 
                                 <Label Text="{Binding Title}"/>
-                                <Label Grid.Row="1" Text="{Binding Description}"/>
+                                <Label Grid.Row="1" Text="{Binding Description}" Margin="5,0,0,10"/>
                                 
                             </Grid>
                         </Grid>
@@ -51,6 +55,7 @@
 					
         </ListView>
         <!--MAIN LISTVIEW-->
+        
         
     </StackLayout>
     

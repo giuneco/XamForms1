@@ -19,8 +19,8 @@ namespace XamForms1
 
             
             var tabbedNavigation = new FreshTabbedNavigationContainer ();
-            tabbedNavigation.AddTab<MoviesPageModel> ("Movies", null);
-            tabbedNavigation.AddTab<AboutPageModel> ("About", null);
+            tabbedNavigation.AddTab<MoviesPageModel> ("Movies", "movie");
+            tabbedNavigation.AddTab<AboutPageModel> ("About", "about");
             
             MainPage = tabbedNavigation;
             
