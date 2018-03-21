@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:XamForms1.Converters;assembly=XamForms1"
+             xmlns:behaviour="clr-namespace:XamForms1.Behaviour;assembly=XamForms1"
+             x:Class="XamForms1.Pages.MoviesPage" Title="Giuneco Movies">
+   
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Spacing="0">
+        <SearchBar Placeholder="Search Here.." SearchCommand="{Binding SearchMovies}" Text="{Binding SearchText}"  BackgroundColor="{StaticResource Primary}" >
+            <SearchBar.PlaceholderColor>
+                <OnPlatform x:TypeArguments="Color" iOS="Black" Android="White"/>
+            </SearchBar.PlaceholderColor>>
+        </SearchBar>
+        
+        <!--MAIN LISTVIEW-->
+        <ListView HasUnevenRows="true" ItemsSource="{Binding Movies}" BackgroundColor="{StaticResource Primary}" SeparatorVisibility="None">
+            
+            <ListView.Behaviors>
+                <behaviour:EventToCommandBehavior EventName="ItemSelected" Command="{Binding SayMovieTitle}" Converter="{StaticResource SelectedItemConverter}" />
+            </ListView.Behaviors>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="150">
+                        <Grid Margin="5" BackgroundColor="{StaticResource DarkPrimary}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image  Aspect="AspectFit" Source="{Binding ArtworkUri}"/>
+                            
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="{Binding Title}"/>
+                                <Label Grid.Row="1" Text="{Binding Description}" Margin="5,0,0,10"/>
+                                
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        
+					
+        </ListView>
+        <!--MAIN LISTVIEW-->
+        
+        
+    </StackLayout>
+    
+   
+    
+</ContentPage>

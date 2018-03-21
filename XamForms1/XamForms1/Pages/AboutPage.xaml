@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamForms1.Pages.AboutPage" Title="Giuneco Movies" BackgroundColor="{StaticResource Primary}">
+   <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+      <Label Text="GIUNECO" FontSize="50"/>
+      <Button Text="Web Site" Command="{Binding GoToWebSite}" BackgroundColor="{StaticResource DarkPrimary}" TextColor="White"/>
+   </StackLayout>
+</ContentPage>
